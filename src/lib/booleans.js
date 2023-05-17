@@ -1,85 +1,72 @@
 function negate(a) {
   return !a;
-};
+}
 
 function both(a, b) {
-  return (a && b);
-
-};
+  return a && b;
+}
 
 function either(a, b) {
-  if (a == true | b == true) {
-
+  if (a === true || b === true) {
     return true;
-  } else {
-
-    return false;
-  };
-};
+  }
+  return false;
+}
 
 function none(a, b) {
   return negate(either(a, b));
-};
+}
 
 function one(a, b) {
-  if ((a == true | b == true) && a !== b) {
+  if (a === true || (b === true && a !== b)) {
     return true;
-  } else {
-    return false;
-  };
-};
+  }
+  return false;
+}
 
 function truthiness(a) {
-  if (a) {
-    return true;
-  } else {
-    return false;
-  };
-};
+  return !!a;
+}
 
 function isEqual(a, b) {
   return a === b;
-};
+}
 
 function isGreaterThan(a, b) {
   return a > b;
-};
+}
 
 function isLessThanOrEqualTo(a, b) {
   return a <= b;
-};
+}
 
 function isOdd(a) {
-  if (a % 2 == 1) {
+  if (a % 2 === 1) {
     return true;
-  } else {
-    return false;
-  };
-};
+  }
+  return false;
+}
 
 function isEven(a) {
-  if (a % 2 == 0) {
+  if (a % 2 === 0) {
     return true;
-  } else {
-    return false;
-  };
-};
+  }
+  return false;
+}
 
 function isSquare(a) {
-  if (Number.isInteger(Math.sqrt(a)) == true) {
+  if (Number.isInteger(Math.sqrt(a)) === true) {
     return true;
-  } else {
-    return false;
-  };
-};
+  }
+  return false;
+}
 
 function startsWith(char, string) {
-  if (string.charAt(0) == char) {
+  if (string.charAt(0) === char) {
     return true;
-  } else {
-    return false;
-  };
-};
+  }
+  return false;
+}
 
 function containsVowels(string) {
   string = string.toLowerCase();
@@ -88,18 +75,11 @@ function containsVowels(string) {
     if (vowels.includes(string[i])) return true;
   }
   return false;
-};
-
+}
 
 function isLowerCase(string) {
-return string.toLowerCase() === string;
-/*  const lowerString = string.toLowerCase(); 
-  if (string == lowerString) {
-  return true; 
-  }
-  return false;
-  Both codes do the same thing. */
-};
+  const lowerCaseString = string.toLowerCase();
+}
 
 module.exports = {
   negate,
@@ -116,5 +96,5 @@ module.exports = {
   isSquare,
   startsWith,
   containsVowels,
-  isLowerCase
+  isLowerCase,
 };

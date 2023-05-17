@@ -1,5 +1,4 @@
 const express = require('express');
-// importing functions from the JS basics folders so we don't have to rewrite them
 const { sayHello, uppercase, lowercase } = require('./lib/strings');
 const { add, subtract, multiply, divide, remainder } = require('./lib/numbers');
 const { negate, truthiness, startsWith } = require('./lib/booleans');
@@ -121,7 +120,6 @@ app.post('/booleans/negate', (req, res) => {
 
 app.post('/booleans/truthiness', (req, res) => {
   const { value } = req.body;
-  // eslint-disable-next-line no-constant-condition
   if (value == null || 0 || ' ') {
     return res.status(200).json({ result: truthiness(value) });
   }
@@ -186,11 +184,9 @@ app.post('/arrays/remove-element', (req, res) => {
   const { array } = req.body;
   const { index } = req.query;
 
-  // remove element at given index
   if (index !== undefined) {
     array.splice(index, 1);
   } else {
-    // remove first element if no index is given
     array.shift();
   }
 

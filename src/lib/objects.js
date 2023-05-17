@@ -1,7 +1,7 @@
 const createPerson = (name, age) => {
-  return person = {
-    name: name,
-    age: age,
+  return {
+    name,
+    age,
   };
 };
 
@@ -14,26 +14,16 @@ const getProperty = (property, object) => {
 };
 
 const hasProperty = (property, object) => {
-  if (object.hasOwnProperty(property) == true) {
-    return true;
-  } else {
-    return false;
-  }
+  return object.hasOwnProperty(property);
 };
 
-const isOver65 = person => {
-  if (person.age > 65) {
-    return true;
-  } else {
-    return false;
-  }
-};
+const isOver65 = person => person.age > 65;
 
 const getAges = people => {
-  let arrAges = []
+  const arrAges = [];
   for (let i = 0; i < people.length; i++) {
     arrAges.push(people[i].age);
-  };
+  }
   return arrAges;
 };
 
@@ -50,12 +40,12 @@ const averageAge = people => {
 };
 
 const createTalkingPerson = (name, age) => {
-    const person = {
+  const person = {
     name,
     age,
     introduce: stranger => {
       return `Hi ${stranger}, my name is ${person.name} and I am ${person.age}!`;
-    }
+    },
   };
   return person;
 };
@@ -70,5 +60,5 @@ module.exports = {
   findByName,
   findHondas,
   averageAge,
-  createTalkingPerson
+  createTalkingPerson,
 };
